@@ -1,0 +1,48 @@
+.main
+  position: relative
+  padding-top: 65px
+  padding-bottom: 77px
+  background: $background-dark url("../img/section-main/section-main-bg.jpg") center no-repeat 
+  background-size: cover
+  color: $font-light
+  z-index: -2 // среди всех relative-элементов страницы будет самый нижний
+
+  // затемнение фона картинки
+  &::before 
+    content: '';
+    display: block;
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.55) // то же, что и opacity: 55%
+    z-index: 0
+
+  // оформление изображения с коробками
+  &-img
+    // height: 388px
+    position: relative
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      left: 0
+      right: 0
+      width: 100%
+      height: 100%
+      border-radius: 50%
+      border: 1px solid white
+      z-index: -1
+  
+  // оформление заголовков
+  &-text
+    position: relative
+    &__title
+      font-size: 41px
+      font-weight: 700
+      margin-bottom: 10px
+      width: 100%
+    &__subtitle
+      font-size: 28px
+      font-weight: 300

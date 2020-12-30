@@ -1,5 +1,11 @@
 *
   box-sizing: border-box
+  
+body
+  background-color: #fff
+  font-family: 'Roboto', sans-serif // шрифт без засечек
+  color: $font-dark
+  margin: 0 // это делается через normalize.css
 
 button
   display: flex
@@ -16,13 +22,15 @@ button
   img
     width: 20px
     height: 20px
-button:focus
-  outline: none
-button:hover
-  box-shadow: 1px 1px 1px 1px $button-color-hover
-  transition: all 0.2s ease
-button:active
-  box-shadow: inset 1px 1px 1px 1px $button-color-hover
+  &:focus
+    outline: none
+  &:hover
+    // box-shadow: 1px 1px 1px 1px $button-color-hover
+    background-color: lighten($button-color, 5)
+    cursor: pointer
+    transition: all 0.2s ease
+  &:active
+    box-shadow: inset 1px 1px 1px 1px $button-color-hover
 
 img
   object-fit: contain

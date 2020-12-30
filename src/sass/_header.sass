@@ -1,5 +1,6 @@
 .header
   background-color: white
+  margin: 15px 0
   &-contacts
     display: flex
     justify-content: flex-end
@@ -7,18 +8,36 @@
     &__phone
       font-size: 22px
       font-weight: 500 // medium
-      padding: 0 13px
+      // padding: 0 13px
       color: $font-dark // убрать визуальное отличие ссылок
       text-decoration: none
       &:first-child
-        border-right: 1px solid #cfcfd0
+        &::after
+          content: ''
+          height: 32px
+          border: 1px solid #cfcfd0
+          margin: 0 13px
       &:nth-child(2)
-        margin-right: 15px
-        
-        
+        &::after
+          content: ''
+          margin: 0 14px
     &__button
       width: 179px
       height: 45px
   &-logo
     width: 191px
     height: 61px
+
+@media (max-width: 992px)
+  .header-contacts
+    flex-direction: column
+    align-items: flex-end
+  .header-contacts__phone
+    margin-bottom: 5px
+    &:first-child
+      &::after
+        display: none
+    &:nth-child(2)
+      &::after
+        display: none
+      
